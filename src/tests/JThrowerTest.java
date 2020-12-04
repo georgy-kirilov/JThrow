@@ -6,8 +6,14 @@ public class JThrowerTest
 {
 	public static void main(String[] args)
 	{
-		int age = 150;
+		int age = 15;
 		JThrower.throwIf(age, "age")
-			.isOutOfRange(0, 15);
+			.isOutOfRange(0, 10);
+		
+		String username = "shit";
+		
+		JThrower.throwIf(username, "username")
+			.isNullOrEmpty()
+			.isEqualTo("shit");
 	}
 }

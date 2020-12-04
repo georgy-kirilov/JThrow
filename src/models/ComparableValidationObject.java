@@ -48,6 +48,19 @@ public class ComparableValidationObject<T extends Comparable<T>>
 		return this;
 	}
 	
+	public ComparableValidationObject<T> isEqualTo(T value)
+	{
+		boolean areEqual = this.parameterValue.compareTo(value) == 0;
+		
+		if (areEqual)
+		{
+			throw new IllegalArgumentException
+				(MessageFactory.equalTo(this.parameterName, value.toString()));
+		}
+		
+		return this;
+	}
+	
 	public ComparableValidationObject<T> isOutOfRange(T min, T max)
 	{
 		try

@@ -10,5 +10,9 @@ public class MessageFormats
 	
 	public static final String MORE_THAN = "%s cannot be more than %s";
 	
+	public static final String EQUAL_TO = "%s cannot be equal to %s";
+	
 	public static final String OUT_OF_RANGE = "%s was outside the range [%s, %s]";
+	
+	public static final String CANNOT_BE_EMPTY = "%s cannot be empty";
 }

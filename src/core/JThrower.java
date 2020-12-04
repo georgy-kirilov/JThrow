@@ -2,6 +2,7 @@ package core;
 
 import models.ComparableValidationObject;
 import models.NullableValidationObject;
+import models.StringValidationObject;
 
 public class JThrower 
 {
@@ -25,5 +26,15 @@ public class JThrower
 	public static <T extends Comparable<T>> ComparableValidationObject<T> throwIf(T parameter, String parameterName)
 	{
 		return new ComparableValidationObject<T>(parameter, parameterName);
+	}
+	
+	public static StringValidationObject throwIf(String parameter)
+	{
+		return new StringValidationObject(parameter);
+	}
+	
+	public static StringValidationObject throwIf(String parameter, String parameterName)
+	{
+		return new StringValidationObject(parameter, parameterName);
 	}
 }

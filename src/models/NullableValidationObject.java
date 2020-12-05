@@ -30,4 +30,15 @@ public class NullableValidationObject<T>
 		
 		return this;
 	}
+	
+	public NullableValidationObject<T> isEqualTo(T value)
+	{
+		if (this.parameterValue.equals(value))
+		{
+			throw new IllegalArgumentException
+				(MessageFactory.equalTo(this.parameterName, value.toString()));
+		}
+		
+		return this;
+	}
 }

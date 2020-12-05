@@ -6,6 +6,13 @@
 The main purpose of the library is to encapsulate the inner state of your application, so-called ***Defensive Programming***
 
 ## Usage
+#### Set up
+
+```java
+import core.JThrower;
+
+```
+#### Code examples
 * Intuitive fluent API 
 
 ```java
@@ -34,3 +41,6 @@ public static void main(String[] args) {
 
 ```
 ![title](images/exception-image.png)
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)

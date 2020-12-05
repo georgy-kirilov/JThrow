@@ -9,7 +9,10 @@ public class JThrowerTest
 		String email = "name@gmail.com";
 		
 		JThrower.throwIf(email.length(), "Email length")
-				.isLessThan(20);
+				.isLessThan(10);
+		
+		JThrower.throwIf("Georgi")
+				.has(x -> x.charAt(0) == 'G');
 		
 		JThrower.throwIf(email, "email")
 				.isNullOrEmpty()

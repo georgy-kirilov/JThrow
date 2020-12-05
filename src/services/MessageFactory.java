@@ -1,6 +1,6 @@
 package services;
 
-public class MessageFactory 
+public class MessageFactory
 {
 	private MessageFactory() { }
 	
@@ -37,5 +37,10 @@ public class MessageFactory
 	public static String doesNotMatchPattern(String parameterName, String pattern)
 	{
 		return String.format(MessageFormats.DOES_NOT_MATCH_PATTERN, parameterName, pattern);
+	}
+	
+	public static String invalidParameterState(String parameterName)
+	{
+		return String.format(MessageFormats.INVALID_PARAMETER_STATE, parameterName);
 	}
 }

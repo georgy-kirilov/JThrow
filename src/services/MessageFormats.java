@@ -17,4 +17,6 @@ public class MessageFormats
 	public static final String CANNOT_BE_EMPTY = "%s cannot be empty";
 	
 	public static final String DOES_NOT_MATCH_PATTERN = "%s did not match the given pattern: %s";
+	
+	public static final String INVALID_PARAMETER_STATE = "%s had invalid state";
 }

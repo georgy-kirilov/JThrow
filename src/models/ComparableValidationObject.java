@@ -76,4 +76,10 @@ public class ComparableValidationObject<T extends Comparable<T>>
 		
 		return this;
 	}
+	
+	public ComparableValidationObject<T> has(Predicate<T> predicate)
+	{
+		super.has(predicate);
+		return this;
+	}
 }

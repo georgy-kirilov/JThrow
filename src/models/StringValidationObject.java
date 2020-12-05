@@ -61,6 +61,12 @@ public class StringValidationObject extends ComparableValidationObject<String>
 		return this;
 	}
 	
+	public StringValidationObject has(Predicate<String> predicate)
+	{
+		super.has(predicate);
+		return this;
+	}
+	
 	public StringValidationObject doesNotMatchPattern(String regexPattern)
 	{
 		Matcher matcher = Pattern

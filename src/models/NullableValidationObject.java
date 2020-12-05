@@ -41,4 +41,17 @@ public class NullableValidationObject<T>
 		
 		return this;
 	}
+	
+	public NullableValidationObject<T> has(Predicate<T> predicate)
+	{
+		boolean isTrue = predicate.invoke(this.parameterValue);
+		
+		if (isTrue)
+		{
+			throw new IllegalArgumentException
+				(MessageFactory.invalidParameterState(this.parameterName));
+		}
+		
+		return this;
+	}
 }

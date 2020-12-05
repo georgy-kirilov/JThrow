@@ -40,7 +40,35 @@ public static void main(String[] args) {
 
 
 ```
-![title](images/error-message.png)
 
+```java
+Beer was sold
+Exception in thread "main" custom.exceptions.OutOfRangeException: Age cannot be less than 18
+	at jthrow/models.ComparableValidationObject.isLessThan(ComparableValidationObject.java:29)
+	at jthrow/tests.Test.buyBeer(Test.java:21)
+	at jthrow/tests.Test.main(Test.java:17)
+    
+```
+
+```java
+Date minDate = new Date(1890, 1, 1);
+Date maxDate = new Date();
+
+Date userBirthdate = new Date(1888, 6, 6);
+
+JThrower.throwIf(userBirthdate)
+        .isNull()
+        .isOutOfRange(minDate, maxDate);
+
+
+```
+
+```java
+Exception in thread "main" custom.exceptions.OutOfRangeException: 
+Parameter was outside the range [Mon Feb 01 00:00:00 EET 3790, Sun Dec 06 00:54:16 EET 2020]
+	at jthrow/models.ComparableValidationObject.isOutOfRange(ComparableValidationObject.java:62)
+	at jthrow/tests.Test.main(Test.java:18)
+    
+```
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)

@@ -1,2 +1,2 @@
 # JThrow
-### JThrow is a library for exception validation written in Java
+### JThrow is a library for logical and exception throwing validation written in Java

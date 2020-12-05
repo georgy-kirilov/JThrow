@@ -8,7 +8,7 @@ public class MessageFormats
 	
 	public static final String LESS_THAN = "%s cannot be less than %s";
 	
-	public static final String MORE_THAN = "%s cannot be more than %s";
+	public static final String GREATER_THAN = "%s cannot be greater than %s";
 	
 	public static final String EQUAL_TO = "%s cannot be equal to %s";
 	
@@ -18,5 +18,5 @@ public class MessageFormats
 	
 	public static final String DOES_NOT_MATCH_PATTERN = "%s did not match the given pattern: %s";
 	
-	public static final String INVALID_PARAMETER_STATE = "%s had invalid state";
+	public static final String INVALID_PARAMETER_STATE = "%s had invalid inner state";
 }

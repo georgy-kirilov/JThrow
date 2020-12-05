@@ -4,8 +4,7 @@ import core.JChecker;
 import services.MessageFactory;
 import custom.exceptions.OutOfRangeException;
 
-public class ComparableValidationObject<T extends Comparable<T>>
-	extends NullableValidationObject<T>
+public class ComparableValidationObject<T extends Comparable<T>> extends NullableValidationObject<T>
 {
 	public ComparableValidationObject(T parameter)
 	{

@@ -1,6 +1,6 @@
 package services;
 
-public class MessageFormats
+class MessageFormats
 {
 	private MessageFormats() { }
 	
@@ -21,4 +21,6 @@ public class MessageFormats
 	public static final String INVALID_PARAMETER_STATE = "%s had invalid inner state";
 	
 	public static final String CANNOT_BE_WHITE_SPACE = "%s cannot be white space";
+	
+	public static final String INVALID_EMAIL = "Invalid email address";
 }

@@ -87,4 +87,14 @@ public class StringValidationObject extends ComparableValidationObject<String>
 		
 		return this;
 	}
+	
+	public StringValidationObject isInvalidEmail()
+	{
+		if (!JChecker.isValidEmail(this.getParameterValue()))
+		{
+			throw new IllegalArgumentException(MessageFactory.invalidEmailAddress());
+		}
+		
+		return this;
+	}
 }

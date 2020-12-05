@@ -5,6 +5,8 @@ import java.util.regex.Pattern;
 
 public class JChecker 
 {
+	public static final String EMAIL_REGEX_PATTERN = "^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$";
+	
 	private JChecker() { }
 	
 	public static boolean isNull(Object obj)
@@ -19,7 +21,7 @@ public class JChecker
 	
 	public static boolean isNullOrWhiteSpace(String str)
 	{
-		return isNull(str) || isNullOrEmpty(str.trim());
+		return isNull(str) || str.trim().length() == 0;
 	}
 	
 	public static <T extends Comparable<T>> boolean isLessThan(T min, T actual)
@@ -56,5 +58,10 @@ public class JChecker
 	{
 		Matcher matcher = Pattern.compile(regexPattern).matcher(text);
 		return matcher.matches();
+	}
+	
+	public static boolean isValidEmail(String value)
+	{
+		return matchesPattern(EMAIL_REGEX_PATTERN, value);
 	}
 }

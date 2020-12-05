@@ -48,4 +48,9 @@ public class MessageFactory
 	{
 		return String.format(MessageFormats.CANNOT_BE_WHITE_SPACE, parameterName);
 	}
+	
+	public static String invalidEmailAddress()
+	{
+		return String.format(MessageFormats.INVALID_EMAIL);
+	}
 }

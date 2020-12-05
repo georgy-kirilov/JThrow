@@ -26,12 +26,12 @@ public class StringValidationObject extends ComparableValidationObject<String>
 	public StringValidationObject isNullOrEmpty()
 	{
 		this.isNull();
-		boolean isEmpty = this.parameterValue.length() == 0;
+		boolean isEmpty = this.getParameterValue().length() == 0;
 		
 		if (isEmpty)
 		{
 			throw new IllegalArgumentException
-				(MessageFactory.cannotBeEmpty(this.parameterName));
+				(MessageFactory.cannotBeEmpty(this.getParameterName()));
 		}
 		
 		return this;
@@ -71,12 +71,12 @@ public class StringValidationObject extends ComparableValidationObject<String>
 	{
 		Matcher matcher = Pattern
 					.compile(regexPattern)
-					.matcher(this.parameterValue);
+					.matcher(this.getParameterValue());
 		
 		if (!matcher.matches())
 		{
 			throw new IllegalArgumentException
-				(MessageFactory.doesNotMatchPattern(this.parameterName, regexPattern));
+				(MessageFactory.doesNotMatchPattern(this.getParameterName(), regexPattern));
 		}
 		
 		return this;

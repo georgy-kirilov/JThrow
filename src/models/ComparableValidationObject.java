@@ -24,12 +24,12 @@ public class ComparableValidationObject<T extends Comparable<T>>
 	
 	public ComparableValidationObject<T> isLessThan(T value)
 	{
-		boolean lessThan = this.parameterValue.compareTo(value) < 0;
+		boolean lessThan = this.getParameterValue().compareTo(value) < 0;
 		
 		if (lessThan)
 		{
 			throw new OutOfRangeException
-				(MessageFactory.lessThan(this.parameterName, value.toString()));
+				(MessageFactory.lessThan(this.getParameterName(), value.toString()));
 		}
 		
 		return this;
@@ -37,12 +37,12 @@ public class ComparableValidationObject<T extends Comparable<T>>
 	
 	public ComparableValidationObject<T> isMoreThan(T value)
 	{
-		boolean moreThan = this.parameterValue.compareTo(value) > 0;
+		boolean moreThan = this.getParameterValue().compareTo(value) > 0;
 		
 		if (moreThan)
 		{
 			throw new OutOfRangeException
-				(MessageFactory.moreThan(this.parameterName, value.toString()));
+				(MessageFactory.moreThan(this.getParameterName(), value.toString()));
 		}
 		
 		return this;
@@ -50,12 +50,12 @@ public class ComparableValidationObject<T extends Comparable<T>>
 	
 	public ComparableValidationObject<T> isEqualTo(T value)
 	{
-		boolean areEqual = this.parameterValue.compareTo(value) == 0;
+		boolean areEqual = this.getParameterValue().compareTo(value) == 0;
 		
 		if (areEqual)
 		{
 			throw new IllegalArgumentException
-				(MessageFactory.equalTo(this.parameterName, value.toString()));
+				(MessageFactory.equalTo(this.getParameterName(), value.toString()));
 		}
 		
 		return this;
@@ -71,7 +71,7 @@ public class ComparableValidationObject<T extends Comparable<T>>
 		catch (OutOfRangeException e)
 		{
 			throw new OutOfRangeException(MessageFactory.outOfRange
-					(this.parameterName, min.toString(), max.toString()));
+					(this.getParameterName(), min.toString(), max.toString()));
 		}
 		
 		return this;

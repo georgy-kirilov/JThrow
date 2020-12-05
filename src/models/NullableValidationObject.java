@@ -6,8 +6,8 @@ public class NullableValidationObject<T>
 {
 	private static final String DEFAULT_PARAMETER_NAME = "Parameter";
 	
-	protected T parameterValue;
-	protected String parameterName;
+	private T parameterValue;
+	private String parameterName;
 	
 	public NullableValidationObject(T parameter)
 	{
@@ -20,12 +20,22 @@ public class NullableValidationObject<T>
 		this.parameterName = parameterName;
 	}
 	
+	protected T getParameterValue()
+	{
+		return this.parameterValue;
+	}
+	
+	protected String getParameterName()
+	{
+		return this.parameterName;
+	}
+	
 	public NullableValidationObject<T> isNull()
 	{
-		if (this.parameterValue == null)
+		if (this.getParameterValue() == null)
 		{
 			throw new NullPointerException
-				(MessageFactory.cannotBeNull(this.parameterName));
+				(MessageFactory.cannotBeNull(this.getParameterName()));
 		}
 		
 		return this;
@@ -33,10 +43,10 @@ public class NullableValidationObject<T>
 	
 	public NullableValidationObject<T> isEqualTo(T value)
 	{
-		if (this.parameterValue.equals(value))
+		if (this.getParameterValue().equals(value))
 		{
 			throw new IllegalArgumentException
-				(MessageFactory.equalTo(this.parameterName, value.toString()));
+				(MessageFactory.equalTo(this.getParameterName(), value.toString()));
 		}
 		
 		return this;
@@ -44,12 +54,12 @@ public class NullableValidationObject<T>
 	
 	public NullableValidationObject<T> has(Predicate<T> predicate)
 	{
-		boolean isTrue = predicate.invoke(this.parameterValue);
+		boolean isTrue = predicate.invoke(this.getParameterValue());
 		
 		if (isTrue)
 		{
 			throw new IllegalArgumentException
-				(MessageFactory.invalidParameterState(this.parameterName));
+				(MessageFactory.invalidParameterState(this.getParameterName()));
 		}
 		
 		return this;

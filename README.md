@@ -40,7 +40,7 @@ public static void main(String[] args) {
 
 
 ```
-![title](images/exception-image.png)
+![title](images/error-message.png)
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)

@@ -17,5 +17,8 @@ public class JThrowerTest
 		JThrower.throwIf(email, "Email")
 				.isNullOrEmpty()
 				.has(x -> !JChecker.isInRange(10, x.length(), 20));
+		
+		JThrower.throwIf("	")
+				.isNullOrWhiteSpace();
 	}
 }

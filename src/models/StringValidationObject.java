@@ -34,6 +34,19 @@ public class StringValidationObject extends ComparableValidationObject<String>
 		return this;
 	}
 	
+	public StringValidationObject isNullOrWhiteSpace()
+	{
+		this.isNull();
+		
+		if (JChecker.isNullOrWhiteSpace(this.getParameterValue()))
+		{
+			throw new IllegalArgumentException
+				(MessageFactory.cannotBeWhiteSpace(this.getParameterName()));
+		}
+		
+		return this;
+	}
+	
 	public StringValidationObject isLessThan(String value)
 	{
 		super.isLessThan(value);

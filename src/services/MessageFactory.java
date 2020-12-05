@@ -43,4 +43,9 @@ public class MessageFactory
 	{
 		return String.format(MessageFormats.INVALID_PARAMETER_STATE, parameterName);
 	}
+	
+	public static String cannotBeWhiteSpace(String parameterName)
+	{
+		return String.format(MessageFormats.CANNOT_BE_WHITE_SPACE, parameterName);
+	}
 }

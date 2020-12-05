@@ -1,8 +1,6 @@
 package models;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
+import core.JChecker;
 import services.MessageFactory;
 
 public class StringValidationObject extends ComparableValidationObject<String>
@@ -26,12 +24,24 @@ public class StringValidationObject extends ComparableValidationObject<String>
 	public StringValidationObject isNullOrEmpty()
 	{
 		this.isNull();
-		boolean isEmpty = this.getParameterValue().length() == 0;
 		
-		if (isEmpty)
+		if (JChecker.isNullOrEmpty(this.getParameterValue()))
 		{
 			throw new IllegalArgumentException
 				(MessageFactory.cannotBeEmpty(this.getParameterName()));
+		}
+		
+		return this;
+	}
+	
+	public StringValidationObject isNullOrWhiteSpace()
+	{
+		this.isNull();
+		
+		if (JChecker.isNullOrWhiteSpace(this.getParameterValue()))
+		{
+			throw new IllegalArgumentException
+				(MessageFactory.cannotBeWhiteSpace(this.getParameterName()));
 		}
 		
 		return this;
@@ -43,9 +53,9 @@ public class StringValidationObject extends ComparableValidationObject<String>
 		return this;
 	}
 	
-	public StringValidationObject isMoreThan(String value)
+	public StringValidationObject isGreaterThan(String value)
 	{
-		super.isMoreThan(value);
+		super.isGreaterThan(value);
 		return this;
 	}
 	
@@ -69,11 +79,7 @@ public class StringValidationObject extends ComparableValidationObject<String>
 	
 	public StringValidationObject doesNotMatchPattern(String regexPattern)
 	{
-		Matcher matcher = Pattern
-					.compile(regexPattern)
-					.matcher(this.getParameterValue());
-		
-		if (!matcher.matches())
+		if (!JChecker.matchesPattern(regexPattern, this.getParameterValue()))
 		{
 			throw new IllegalArgumentException
 				(MessageFactory.doesNotMatchPattern(this.getParameterName(), regexPattern));

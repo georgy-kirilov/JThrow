@@ -1,5 +1,6 @@
 package models;
 
+import core.JChecker;
 import services.MessageFactory;
 
 public class NullableValidationObject<T>
@@ -32,7 +33,7 @@ public class NullableValidationObject<T>
 	
 	public NullableValidationObject<T> isNull()
 	{
-		if (this.getParameterValue() == null)
+		if (JChecker.isNull(this.getParameterValue()))
 		{
 			throw new NullPointerException
 				(MessageFactory.cannotBeNull(this.getParameterName()));
@@ -43,7 +44,7 @@ public class NullableValidationObject<T>
 	
 	public NullableValidationObject<T> isEqualTo(T value)
 	{
-		if (this.getParameterValue().equals(value))
+		if (JChecker.areEqual(this.getParameterValue(), value))
 		{
 			throw new IllegalArgumentException
 				(MessageFactory.equalTo(this.getParameterName(), value.toString()));

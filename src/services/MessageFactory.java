@@ -14,9 +14,9 @@ public class MessageFactory
 		return String.format(MessageFormats.LESS_THAN, parameterName, minValue);
 	}
 	
-	public static String moreThan(String parameterName, String maxValue)
+	public static String greaterThan(String parameterName, String maxValue)
 	{
-		return String.format(MessageFormats.MORE_THAN, parameterName, maxValue);
+		return String.format(MessageFormats.GREATER_THAN, parameterName, maxValue);
 	}
 	
 	public static String equalTo(String parameterName, String forbiddenValue)
@@ -42,5 +42,10 @@ public class MessageFactory
 	public static String invalidParameterState(String parameterName)
 	{
 		return String.format(MessageFormats.INVALID_PARAMETER_STATE, parameterName);
+	}
+	
+	public static String cannotBeWhiteSpace(String parameterName)
+	{
+		return String.format(MessageFormats.CANNOT_BE_WHITE_SPACE, parameterName);
 	}
 }

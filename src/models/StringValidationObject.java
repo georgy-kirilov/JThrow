@@ -1,5 +1,8 @@
 package models;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import services.MessageFactory;
 
 public class StringValidationObject extends ComparableValidationObject<String>
@@ -55,6 +58,21 @@ public class StringValidationObject extends ComparableValidationObject<String>
 	public StringValidationObject isOutOfRange(String min, String max)
 	{
 		super.isOutOfRange(min, max);
+		return this;
+	}
+	
+	public StringValidationObject doesNotMatchPattern(String regexPattern)
+	{
+		Matcher matcher = Pattern
+					.compile(regexPattern)
+					.matcher(this.parameterValue);
+		
+		if (!matcher.matches())
+		{
+			throw new IllegalArgumentException
+				(MessageFactory.doesNotMatchPattern(this.parameterName, regexPattern));
+		}
+		
 		return this;
 	}
 }

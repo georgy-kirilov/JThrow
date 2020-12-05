@@ -33,4 +33,9 @@ public class MessageFactory
 	{
 		return String.format(MessageFormats.CANNOT_BE_EMPTY, parameterName);
 	}
+	
+	public static String doesNotMatchPattern(String parameterName, String pattern)
+	{
+		return String.format(MessageFormats.DOES_NOT_MATCH_PATTERN, parameterName, pattern);
+	}
 }

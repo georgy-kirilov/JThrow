@@ -6,14 +6,13 @@ public class JThrowerTest
 {
 	public static void main(String[] args)
 	{
-		int age = 15;
-		JThrower.throwIf(age, "age")
-			.isOutOfRange(0, 10);
+		String email = "name@gmail.com";
 		
-		String username = "shit";
+		JThrower.throwIf(email.length(), "Email length")
+				.isLessThan(20);
 		
-		JThrower.throwIf(username, "username")
-			.isNullOrEmpty()
-			.isEqualTo("shit");
+		JThrower.throwIf(email, "email")
+				.isNullOrEmpty()
+				.doesNotMatchPattern("^[a-zA-Z0-9_!#$%&’*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$");
 	}
 }

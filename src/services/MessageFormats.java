@@ -15,4 +15,6 @@ public class MessageFormats
 	public static final String OUT_OF_RANGE = "%s was outside the range [%s, %s]";
 	
 	public static final String CANNOT_BE_EMPTY = "%s cannot be empty";
+	
+	public static final String DOES_NOT_MATCH_PATTERN = "%s did not match the given pattern: %s";
 }

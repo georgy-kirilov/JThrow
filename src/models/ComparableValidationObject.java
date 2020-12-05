@@ -58,7 +58,7 @@ public class ComparableValidationObject<T extends Comparable<T>>
 	
 	public ComparableValidationObject<T> isOutOfRange(T min, T max)
 	{
-		if (!JChecker.isInRange(min, this.getParameterValue(), max))
+		if (JChecker.isOutOfRange(min, this.getParameterValue(), max))
 		{
 			throw new OutOfRangeException(MessageFactory.outOfRange
 				(this.getParameterName(), min.toString(), max.toString()));

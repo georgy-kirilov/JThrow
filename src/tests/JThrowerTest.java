@@ -21,4 +21,11 @@ public class JThrowerTest
 		JThrower.throwIf("	")
 				.isNullOrWhiteSpace();
 	}
+	
+	public static void setName(String name)
+	{
+		JThrower.throwIf(name)
+				.isNullOrEmpty()
+				.has(x -> JChecker.isOutOfRange(2, x.length(), 50));
+	}
 }

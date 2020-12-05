@@ -37,6 +37,11 @@ public class JChecker
 		return !isLessThan(min, actual) && !isGreaterThan(max, actual);
 	}
 	
+	public static <T extends Comparable<T>> boolean isOutOfRange(T min, T actual, T max)
+	{
+		return !isInRange(min, actual, max);
+	}
+	
 	public static boolean areEqual(Object a, Object b)
 	{
 		return a.equals(b);

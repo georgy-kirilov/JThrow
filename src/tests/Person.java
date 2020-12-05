@@ -12,7 +12,6 @@ class Person
 	private final boolean isMale;
 	private String email;
 	
-	
 	public Person(String name, int age, boolean isMale, String email)
 	{
 		this.setName(name);

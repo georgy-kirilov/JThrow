@@ -1,4 +1,4 @@
-package core;
+package jthrow;
 
 import models.ComparableValidationObject;
 import models.NullableValidationObject;

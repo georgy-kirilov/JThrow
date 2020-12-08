@@ -1,6 +1,6 @@
 package models;
 
-import core.JChecker;
+import jthrow.JChecker;
 import services.MessageFactory;
 
 public class NullableValidationObject<T>

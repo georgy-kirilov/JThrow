@@ -1,4 +1,4 @@
-package core;
+package jthrow;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

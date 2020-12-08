@@ -9,7 +9,7 @@ The main purpose of the library is to encapsulate the inner state of your applic
 #### Set up
 
 ```java
-import core.JThrower;
+import jthrow.JThrower;
 
 ```
 #### Code examples

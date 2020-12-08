@@ -16,12 +16,12 @@ public class JChecker
 	
 	public static boolean isNullOrEmpty(String str)
 	{
-		return isNull(str) || str.length() == 0;
+		return isNull(str) || str.isEmpty();
 	}
 	
 	public static boolean isNullOrWhiteSpace(String str)
 	{
-		return isNull(str) || str.trim().length() == 0;
+		return isNull(str) || str.isBlank();
 	}
 	
 	public static <T extends Comparable<T>> boolean isLessThan(T min, T actual)

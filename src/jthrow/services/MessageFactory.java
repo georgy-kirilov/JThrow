@@ -1,4 +1,4 @@
-package services;
+package jthrow.services;
 
 public class MessageFactory
 {

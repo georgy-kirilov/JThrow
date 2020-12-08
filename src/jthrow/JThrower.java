@@ -1,8 +1,8 @@
 package jthrow;
 
-import models.ComparableValidationObject;
-import models.NullableValidationObject;
-import models.StringValidationObject;
+import jthrow.models.StringValidationObject;
+import jthrow.models.NullableValidationObject;
+import jthrow.models.ComparableValidationObject;
 
 public class JThrower 
 {

@@ -1,4 +1,4 @@
-package models;
+package jthrow.models;
 
 public interface Predicate<T>
 {

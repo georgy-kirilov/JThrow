@@ -1,2 +1,3 @@
-module jthrow {
+module jthrow
+{
 }

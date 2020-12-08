@@ -1,7 +1,7 @@
-package models;
+package jthrow.models;
 
 import jthrow.JChecker;
-import services.MessageFactory;
+import jthrow.services.MessageFactory;
 
 public class StringValidationObject extends ComparableValidationObject<String>
 {

@@ -1,8 +1,8 @@
-package models;
+package jthrow.models;
 
-import services.MessageFactory;
-import custom.exceptions.OutOfRangeException;
 import jthrow.JChecker;
+import jthrow.custom.exceptions.OutOfRangeException;
+import jthrow.services.MessageFactory;
 
 public class ComparableValidationObject<T extends Comparable<T>> extends NullableValidationObject<T>
 {

@@ -1,4 +1,4 @@
-package custom.exceptions;
+package jthrow.custom.exceptions;
 
 public class OutOfRangeException extends RuntimeException
 {

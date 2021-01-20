@@ -28,8 +28,10 @@ JThrower.throwIf(userEmail)
 
 ```java
 
+final int LEGAL_AGE = 18;
+
 public static void buyBeer(int userAge) {
-    JThrower.throwIf(userAge, "Age").isLessThan(18);
+    JThrower.throwIf(userAge, "Age").isLessThan(LEGAL_AGE);
     System.out.println("Beer was sold");
 }
 

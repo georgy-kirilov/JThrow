@@ -51,6 +51,7 @@ Exception in thread "main" custom.exceptions.OutOfRangeException: Age cannot be 
 	at jthrow/tests.Test.main(Test.java:17)
     
 ```
+* All types that implement Comparable<T> are supported
 
 ```java
 Date minDate = new Date(1890, 1, 1);
